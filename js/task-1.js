@@ -11,3 +11,7 @@ arrayOfCategoriesLength.forEach((el, index) => {
   console.log(`Category: ${categoriesNames[index].textContent}`);
   console.log(`Elements: ${el}`);
 });
+
+
+
+

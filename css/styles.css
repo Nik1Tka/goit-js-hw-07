@@ -16,6 +16,8 @@ h5 {
 }
 body {
   margin: 16px;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -103,4 +105,99 @@ img {
   line-height: 1.33333;
   letter-spacing: 0.04em;
   color: #2e2f42;
+}
+
+#main-form {
+  border-radius: 8px;
+  padding: 24px;
+  width: 408px;
+  height: 256px;
+}
+#main-form input {
+  display: block;
+  margin: 8px 0;
+  width: 360px;
+  height: 40px;
+}
+#main-form input[type='password'] {
+  margin-bottom: 16px;
+}
+#main-form button[type='submit'] {
+  border-radius: 8px;
+  border: none;
+  padding: 8px 16px;
+  width: 86px;
+  height: 40px;
+  background: #4e75ff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+#main-form button[type='submit']:hover {
+  background: #6c8cff;
+}
+.widget p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+.change-color {
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 148px;
+  height: 40px;
+  background: #4e75ff;
+}
+#controls input[type='number'] {
+  border: 1px solid #808080;
+  border-radius: 8px;
+  padding: 8px 40px;
+  width: 150px;
+  height: 40px;
+}
+#controls button[data-create] {
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 120px;
+  height: 40px;
+  background: #4e75ff;
+}
+#controls button[data-destroy] {
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 120px;
+  height: 40px;
+  background: #ff4e4e;
+}
+#controls button[data-destroy]:hover {
+  background: #ff7070;
+}
+#controls button[data-create]:hover {
+  background: #6c8cff;
+}
+#boxes {
+  display: flex;
+  flex-wrap: wrap;
 }

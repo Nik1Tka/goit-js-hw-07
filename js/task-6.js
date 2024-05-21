@@ -8,15 +8,26 @@ let heightDiv = 30;
 buttonCreate.addEventListener('click', event => {
   fooCreateSquare(event, boxesEl);
 });
+buttondestroy.addEventListener('click', event => {
+  destroyBoxes(event, boxesEl);
+});
+
+function destroyBoxes(event, context) {
+  context.innerHTML = '';
+  inputEl.value = '';
+}
+
 function fooCreateSquare(event, context) {
   context.innerHTML = '';
-  let array = [];
-  let num = inputEl.value;
+  let num = 0;
+  if (inputEl.value <= 100 && inputEl.value > 0) {
+    num = inputEl.value;
+  }
   for (let i = 0; num > i; i++) {
     context.insertAdjacentHTML(
       'beforeend',
       `<div
-    style="width: ${widthDiv}px; height:${heightDiv}px; background-color:${getRandomHexColor()}" >eee</div>`
+    style="width: ${widthDiv}px; height:${heightDiv}px; background-color:${getRandomHexColor()}" ></div>`
     );
     widthDiv += 10;
     heightDiv += 10;
@@ -24,6 +35,7 @@ function fooCreateSquare(event, context) {
   num = 0;
   widthDiv = 30;
   heightDiv = 30;
+  inputEl.value = '';
 }
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)

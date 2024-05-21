@@ -1,37 +1,23 @@
-const translate = {
-  en: { formValid: 'All form fields must be filled in' },
-  uk: { formValid: 'Усі поля форми мають бути заповнені' },
-};
-const lang = document.querySelector('html').lang;
+const loginForm = document.querySelector('.login-form');
+const submitButton = loginForm.querySelector('button[type="submit"]');
 
-const selector = '#main-form';
-document.addEventListener('submit', event => {
-  formFoo(event, selector);
-});
+loginForm.addEventListener('submit', (event) => {
+  event.preventDefault(); 
 
-function formFoo(event, sel) {
-  event.preventDefault();
-  const formEl = document.querySelector(sel);
-  let isValid = false;
-  let inputArray = formEl.querySelectorAll('input');
-  inputArray = Array.from(inputArray);
-  inputArray.forEach(input => {
-    if (input.value) {
-      isValid = true;
-    } else {
-      isValid = false;
-    }
-  });
-  if (!isValid) {
-    alert(translate[lang].formValid);
+  const emailValue = loginForm.elements.email.value.trim();
+  const passwordValue = loginForm.elements.password.value.trim();
+
+  if (!emailValue || !passwordValue) {
+    alert('All form fields must be filled in');
+    return; 
   }
-  let formObj = {};
 
-  const keys = Object.keys(formEl.elements).filter(key => key.length > 1);
-  keys.forEach(key => {
-    const value = formEl.elements[key].value;
-    formObj[key] = value;
-  });
-  formEl.reset();
-  return console.log(formObj);
-}
+  const formData = {
+    email: emailValue,
+    password: passwordValue,
+  };
+
+  console.log(formData);
+
+  loginForm.reset();
+});
