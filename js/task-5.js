@@ -6,8 +6,9 @@ buttonEl.addEventListener('click', event => {
   fooChangeColor(event, bodyEl);
 });
 function fooChangeColor(e, el) {
-  el.style.backgroundColor = getRandomHexColor();
-  colorEl.textContent = getRandomHexColor();
+  let colorTask5 = getRandomHexColor();
+  el.style.backgroundColor = colorTask5;
+  colorEl.textContent = colorTask5;
 }
 
 function getRandomHexColor() {

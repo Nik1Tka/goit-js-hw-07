@@ -20,18 +20,17 @@ function destroyBoxes(event, context) {
 function fooCreateSquare(event, context) {
   context.innerHTML = '';
   let num = 0;
+  let row = '';
   if (inputEl.value <= 100 && inputEl.value > 0) {
     num = inputEl.value;
   }
   for (let i = 0; num > i; i++) {
-    context.insertAdjacentHTML(
-      'beforeend',
-      `<div
-    style="width: ${widthDiv}px; height:${heightDiv}px; background-color:${getRandomHexColor()}" ></div>`
-    );
+    row += `<div
+    style="width: ${widthDiv}px; height:${heightDiv}px; background-color:${getRandomHexColor()}" ></div>`;
     widthDiv += 10;
     heightDiv += 10;
   }
+  context.insertAdjacentHTML('beforeend', row);
   num = 0;
   widthDiv = 30;
   heightDiv = 30;
